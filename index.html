@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Niharika+Chaitanya</title>
+</head>
+
+<body>
+
+    <div class="step1" id="step1" onclick="goToStep(2)">
+        <div class="img-logo-cont">
+            <img alt="" class="img-logo" src="assets/logo.png">
+            <div class="click-anywhere"> Click anywhere to begin </div>
+        </div>
+    </div>
+
+    <div class="step2 d-none" id="step2">
+        <video autoplay controls width="100%" height="100%" id="invideo">
+            <source src="assets/invitation.mp4" type="video/mp4">
+        </video>
+        <div class="play-button-wrapper">
+            <div title="Play video" class="play-gif" id="circle-play-b">
+                <!-- SVG Play Button -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                    <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="step3 d-none" id="step3">
+        <!-- <img src="assets/invitation.png" alt="" class="img-invitation"> -->
+        <img src="assets/invilayers/bgimg.png" alt="" class="invilayers-bg">
+        <img src="assets/invilayers/married.png" alt="" class="invilayers-married">
+        <div class="invilayers-names">
+            <img src="assets/invilayers/invited.png" alt="" class="invilayers-invited">
+            <img src="assets/invilayers/nihu.png" alt="" class="invilayers-nihu">
+            <img src="assets/invilayers/and.png" alt="" class="invilayers-and">
+            <img src="assets/invilayers/chay.png" alt="" class="invilayers-chay">
+        </div>
+        <img src="assets/invilayers/invintage-copy-copy_0000s_0003_Layer-9.png" alt="" class="invilayers-meandnihu">
+    </div>
+
+</body>
+
+
+<script>
+    var videoElem = null;
+    window.addEventListener("load", (event) => {
+        initVideoElem();
+    });
+
+    function goToStep(step) {
+        if (step == 2) {
+            var step1Container = document.getElementById("step1");
+            step1Container.classList.add("d-none");
+            var step2Container = document.getElementById("step2");
+            step2Container.classList.remove("d-none");
+
+            if (!videoElem) {
+                initVideoElem();
+            }
+            if (videoElem.requestFullscreen) {
+                videoElem.requestFullscreen();
+            } else if (videoElem.mozRequestFullScreen) {
+                videoElem.mozRequestFullScreen();
+            } else if (elvideoElemem.webkitRequestFullscreen) {
+                videoElem.webkitRequestFullscreen();
+            } else if (videoElem.msRequestFullscreen) {
+                videoElem.msRequestFullscreen();
+            }
+        }
+
+        if (step == 3) {
+            var step1Container = document.getElementById("step1");
+            step1Container.classList.add("d-none");
+            var step2Container = document.getElementById("step2");
+            step2Container.classList.add("d-none");
+            var step2Container = document.getElementById("step3");
+            step2Container.classList.remove("d-none");
+        }
+    }
+
+    function initVideoElem() {
+        videoElem = document.getElementById("invideo");
+        videoElem.onended = function (e) {
+            goToStep(3);
+        };
+
+        const circlePlayButton = document.getElementById("circle-play-b");
+
+        circlePlayButton.addEventListener("click", togglePlay);
+        videoElem.addEventListener("playing", function () {
+            circlePlayButton.style.opacity = 0;
+        });
+        videoElem.addEventListener("pause", function () {
+            circlePlayButton.style.opacity = 1;
+        });
+
+    }
+
+    function togglePlay() {
+        if (videoElem.paused || videoElem.ended) {
+            videoElem.play();
+        } else {
+            videoElem.pause();
+        }
+    }
+
+
+</script>
+
+</html>

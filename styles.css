@@ -1,0 +1,368 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.step1 {
+  background: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.img-logo-cont {
+  align-self: center;
+}
+
+.img-logo {
+  height: 15vh;
+}
+
+.click-anywhere {
+  margin-top: 1.5vh;
+  text-align: center;
+  width: 100%;
+  color: #bd917e;
+  animation: blink 6s infinite both;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+
+.step2 {
+  background: black;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  transition: 0.5s ease-in;
+}
+
+.step2 video {
+  background: black;
+}
+
+.play-button-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+.play-button-wrapper #circle-play-b {
+  cursor: pointer;
+  pointer-events: auto;
+}
+.play-button-wrapper #circle-play-b svg {
+  width: 100px;
+  height: 100px;
+  fill: #fff;
+  stroke: #fff;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.step3 {
+  background: #94afa4;
+  height: 100vh;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  transition: 1s ease-in;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.img-invitation {
+  max-height: 100vh;
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+.invilayers-bg {
+  height: 100% !important;
+  object-fit: cover;
+  position: absolute;
+  max-width: 100%;
+  align-self: center;
+}
+
+.invilayers-meandnihu {
+  bottom: 0;
+  height: 43vh;
+  max-width: 200%;
+  left: 0%;
+  position: absolute;
+  align-self: center;
+  opacity: 0;
+  animation: slideIn 1.8s infinite, dis-flicker 1s linear 2s;
+  animation-delay: 2s;
+}
+
+.invilayers-married {
+  height: 14vh;
+  max-width: 70vw;
+  z-index: 1;
+  margin-top: 3vh;
+  opacity: 0;
+  animation: slideIn 1s infinite, text-flicker 1s linear;
+  animation-delay: 1s;
+}
+
+.invilayers-names {
+  position: relative;
+  top: 28vh;
+  width: 100%;
+  left: 7%;
+  display: contents;
+  height: 100vh;
+  animation: text-flicker 1s linear;
+}
+
+.invilayers-nihu {
+  height: 10vh;
+  left: 10%;
+  position: absolute;
+  z-index: 2;
+  top: 30vh;
+  opacity: 0;
+  animation: slideIn 3s infinite, fadeIn 1s ease-in;
+  animation-delay: 4s;
+}
+
+.invilayers-and {
+  position: absolute;
+  height: 3vh;
+  z-index: 1;
+  left: 60vw;
+  top: 37.9vh;
+  opacity: 0;
+  animation: slideIn 3s infinite, fadeIn 1s ease-in;
+  animation-delay: 4s;
+}
+
+.invilayers-chay {
+  height: 11vh;
+  left: 30%;
+  position: absolute;
+  top: 8vh;
+  z-index: 2;
+  top: 38vh;
+  opacity: 0;
+  animation: slideIn 3s infinite, fadeIn 1s ease-in;
+  animation-delay: 4s;
+}
+
+.invilayers-invited {
+  height: 8vh;
+  z-index: 1;
+  position: absolute;
+  top: 24vh;
+  right: 10%;
+  opacity: 0;
+  animation: slideIn 3s infinite, text-flicker 1s linear;
+  animation-delay: 3s;
+}
+
+/* general */
+
+.d-none {
+  display: none;
+}
+
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes dis-flicker {
+  0% {
+    opacity: 0;
+    filter: blur(2px);
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  12% {
+    filter: blur(1px)
+  }
+  20% {
+    filter: blur(5px)
+  }
+  25% {
+    filter: blur(1px)
+  }
+  30% {
+    filter: blur(3px)
+  }
+
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(1px);
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        filter: blur(1px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
