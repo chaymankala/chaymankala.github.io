@@ -87,6 +87,15 @@
     function initVideoElem() {
         videoElem = document.getElementById("invideo");
         videoElem.onended = function (e) {
+            if (videoElem.exitFullscreen) {
+                videoElem.exitFullscreen();
+            } else if (videoElem.mozExitFullScreen) {
+                videoElem.mozExitFullScreen();
+            } else if (elvideoElemem.webkitExitFullscreen) {
+                videoElem.webkitExitFullscreen();
+            } else if (videoElem.msExitFullScreen) {
+                videoElem.msExitFullScreen();
+            }
             goToStep(3);
         };
 
