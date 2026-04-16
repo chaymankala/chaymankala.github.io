@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["3GRCJTDQGF.com.Mujik-Vazhthukkal"],
+        "components": [
+          { "/": "/open" }
+        ]
+      }
+    ]
+  }
+}
